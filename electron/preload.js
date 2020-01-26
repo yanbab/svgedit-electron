@@ -1,6 +1,6 @@
 
 window.addEventListener('DOMContentLoaded', e => {
-  // loadStylesheet(__dirname + "/svg-edit.css", document.body)
+  loadStylesheet(__dirname + "/svg-edit.css", document.body)
   // loadScript(__dirname + "/svg-edit.js")
  
 })

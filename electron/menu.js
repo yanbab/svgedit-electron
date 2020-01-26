@@ -1,8 +1,10 @@
 const { app, Menu } = require('electron')
 const __ = require('./i18n')
+
 const isMac = process.platform === 'darwin'
 
-action = _ => { console.log(_) }
+var action = _ => { console.log(_) }
+var application = {}
 
 const template = [
   // { role: 'appMenu' }
@@ -24,7 +26,7 @@ const template = [
   {
     label: 'File',
     submenu: [
-      { label: 'New', accelerator: 'CmdOrCtrl+N'},
+      { label: 'New', accelerator: 'CmdOrCtrl+N', click: application.newWindow},
       { label: 'New from template', submenu: [
         {label: 'Tiger'}, {label: 'Car'}, 
         { type: "separator" },
@@ -81,14 +83,10 @@ const template = [
   {
     label: 'View',
     submenu: [
-      { label: __("Toggle rulers") },
-      { label: __("Toggle grid") },
+      { label: __("Show Rulers") },
+      { label: __("Show Grid"), type:"checkbox" },
       { type: 'separator' },
       { label: __("View SVG Source") },
-      { type: 'separator' },
-      { role: 'resetzoom' },
-      { role: 'zoomin' },
-      { role: 'zoomout' },
       { type: 'separator' },
       { role: 'togglefullscreen' }
     ]
@@ -125,10 +123,14 @@ const template = [
   },
   {
     label: 'Debug', submenu: [
-      { type: 'separator' },
       { role: 'reload' },
       { role: 'forcereload' },
-      { role: 'toggledevtools' }
+      { role: 'toggledevtools' },
+      { type: 'separator' },
+      { role: 'resetzoom' },
+      { role: 'zoomin' },
+      { role: 'zoomout' },
+      { type: 'separator' },
     ]
   },
   {

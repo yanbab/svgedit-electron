@@ -3,8 +3,8 @@ const path = require('path')
 
 const menu = require('./menu')
 
-const RENDERER = '../svgedit/editor/svg-editor-es.html'
-const PRELOAD_SCRIPT = 'preload.js'
+const RENDERER = __dirname + '/../svgedit/editor/svg-editor-electron.html'
+const PRELOAD_SCRIPT = __dirname + '/preload.js'
 
 var windows = []
 
@@ -12,8 +12,11 @@ function window() {
   // Create the browser window.
   let win = new BrowserWindow({
     width: 800,
-    height: 550,
+    height: 515,
+    minHeight: 515,
+    minWidth: 320,
     show: false,
+    backgroundColor: 'red',
     webPreferences: {
       nodeIntegration: true,
       partition: 'persist:xxx',
@@ -32,8 +35,12 @@ function window() {
 }
 
 function onready() {
-  windows.push(window())
+  app_new()
 }
 
 app.on('ready', onready)
 
+app_new = () => {
+
+  windows.push(window())
+}

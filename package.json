@@ -1,0 +1,23 @@
+{
+  "name": "svgedit-electron",
+  "version": "1.0.0",
+  "description": "Desktop support for SVG-Edit",
+  "main": "electron/index.js",
+  "scripts": {
+    "start": "electron ./electron/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yanbab/svgedit-electron.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yanbab/svgedit-electron/issues"
+  },
+  "homepage": "https://github.com/yanbab/svgedit-electron#readme",
+  "devDependencies": {
+    "electron": "^7.1.10"
+  }
+}

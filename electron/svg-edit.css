@@ -1,0 +1,57 @@
+body {
+  background: window;
+  font: 13px system-ui;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  
+  /* body {
+    background: rgb(46,47,49);
+    color: white;
+  }
+  #svg_editor {
+    color: white;
+  } */
+
+}
+
+
+
+/* hide buttons */
+
+#editor_panel, #idLabel, #classLabel {
+  display: none;
+}
+#svg_editor #tools_top {
+  left: 4px
+}
+/* macos */
+.tools_left .svg_icon {
+ 
+}
+
+input[type=button]:active {
+  color: white;
+}
+
+.tool_button, #tools_left {
+  background: transparent;
+  cursor: default!important;
+  box-shadow: none;
+}
+.tool_button .svg_icon  {
+  filter: grayscale(1);
+  
+}
+.tool_button:hover  .svg_icon  {
+  /* filter: grayscale(0) */
+}
+.tool_button_current {
+  background: #888!important;
+  box-shadow: none!important;
+}
+.tool_button:hover, .push_button:hover, .buttonup:hover, .buttondown, .tool_button_current, .push_button_pressed {
+  background-color: #ccc !important;
+}
+
